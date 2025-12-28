@@ -13,7 +13,7 @@ class ServicioAdmin(admin.ModelAdmin):
     list_display = ('nombre_servicio',)
     search_fields = ('nombre_servicio',)
 
-# 3. Para el modelo Agenda
+# 3. Para el modelo Agenda 
 @admin.register(Agenda)
 class AgendaAdmin(admin.ModelAdmin):
     list_display = ('fecha', 'horario') 
