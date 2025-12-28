@@ -17,4 +17,4 @@ class ServicioAdmin(admin.ModelAdmin):
 @admin.register(Agenda)
 class AgendaAdmin(admin.ModelAdmin):
     list_display = ('fecha', 'horario') 
-    list_filter = ('fecha',)
+    list_filter = ('fecha',) 

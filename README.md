@@ -1,15 +1,16 @@
-# ODONTOLOGÍA GÓMEZ Y ASOCIADOS - Sistema de Agendamiento
+# Nombre del proyecto: ODONTOLOGÍA GÓMEZ Y ASOCIADOS - Sistema de Agendamiento
 
-Una aplicación web desarrollada con Django para permitir a los clientes registrar sus datos, seleccionar un servicio odontológico y agendar una cita (día y horario).
+Es una aplicación web desarrollada con Django para permitir a los clientes registrar sus datos, seleccionar un servicio odontológico y agendar una cita (día y horario).
 
-## Funcionalidades Principales
+## Objetivo funcional:
 
-El sistema está diseñado para capturar la información de la cita en tres etapas dentro de la página principal:
+El sistema está diseñado para capturar la información de la cita en la siguientes etapas dentro de la página principal:
 
 - **Registro de Datos Personales**: Captura el nombre, edad y teléfono del paciente. (Modelo `DatoPersonal`)
 - **Registro de Servicio**: Permite seleccionar el tipo de servicio odontológico requerido (Ej: Limpieza, Extracción, Consulta). (Modelo `Servicio`)
 - **Agendamiento de Cita**: Fija el día y el horario de la cita. (Modelo `Agenda`)
-- **Panel Admin**: Administrar todos los datos de pacientes, servicios y citas desde el administrador de Django.
+
+Además se encuentra el Panel Admin que sirve para poder administrar todos los datos de pacientes, servicios y citas desde el administrador de Django.
 
 ## Cómo usar
  
@@ -29,9 +30,11 @@ El sistema está diseñado para capturar la información de la cita en tres etap
 1. Ve a `http://localhost:8000/horario/`
 2. Completa los campos vacíos (fecha y horario)
 
-### Panel Admin
+### Panel de administración
 1. Ve a `http://localhost:8000/admin/`
-2. Ingresa con las credenciales de superusuario
+2. Ingresa con las credenciales de superusuario 
+    usuario administrador: admin
+    contraseña: 12345
 3. Aquí puedes ver, crear, editar y eliminar todos los datos
 
 ## Estructura de carpetas
@@ -65,7 +68,7 @@ TuPrimeraPaginaGomez/
 └── README.md
 ```
 
-## Modelos
+## Descripción de modelos
 
 ### DatoPersonal
 - nombre (CharField)
@@ -84,5 +87,5 @@ TuPrimeraPaginaGomez/
 Exequiel Gómez
 
 ## Licencia
-
+ 
 MIT
