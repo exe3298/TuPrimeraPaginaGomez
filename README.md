@@ -6,7 +6,7 @@ Es una aplicación web desarrollada con Django para permitir a los clientes regi
 
 El sistema está diseñado para capturar la información de la cita en la siguientes etapas dentro de la página principal:
 
-- **Registro de Datos Personales**: Captura el nombre, edad y teléfono del paciente. (Modelo `DatoPersonal`)
+- **Registro de Datos Personales o Acerca de Mí**: Captura el nombre, edad y teléfono del paciente. (Modelo `DatoPersonal`)
 - **Registro de Servicio**: Permite seleccionar el tipo de servicio odontológico requerido (Ej: Limpieza, Extracción, Consulta). (Modelo `Servicio`)
 - **Agendamiento de Cita**: Fija el día y el horario de la cita. (Modelo `Agenda`)
 
@@ -18,9 +18,9 @@ Además se encuentra el Panel Admin que sirve para poder administrar todos los d
 - Accede a `http://localhost:8000/`
 - Verás la página de bienvenida con la información a completar por parte del paciente
 
-### Introducción de datos personales
+### Introducción de datos personales o acerca de mí
 1. Ve a `http://localhost:8000/datos_personales/`
-2. Completa los campos vacíos (nombre, edad, telefono)
+2. Completa los campos vacíos (nombre, edad, telefono, foto de perfil (opcional))
 
 ### Introducción de servicio a realizar
 1. Ve a `http://localhost:8000/servicio/`
@@ -70,7 +70,7 @@ TuPrimeraPaginaGomez/
 
 ## Descripción de modelos
 
-### DatoPersonal
+### DatoPersonal o Acerca de Mí
 - nombre (CharField)
 - edad (IntegerField)
 - telefono (CharField)

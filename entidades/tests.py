@@ -11,7 +11,7 @@ class OdontologiaTests(TestCase):
         # Creamos un usuario de prueba para los tests
         self.user = User.objects.create_user(username='paciente_test', password='password123')
 
-    # TEST 1: Login de Usuario (Coincide con ID 1 del Excel)
+    # TEST 1: Login de Usuario
     def test_login_usuario(self):
         response = self.client.post(reverse('login'), {
             'username': 'paciente_test',
@@ -20,13 +20,13 @@ class OdontologiaTests(TestCase):
         # Verifica redirección exitosa (302) tras el login
         self.assertEqual(response.status_code, 302) 
 
-    # TEST 2: Carga de Perfil (Coincide con ID 2 del Excel)
+    # TEST 2: Carga de Perfil
     def test_creacion_objeto_perfil(self):
         # El sistema debe crear/obtener el perfil vinculado al usuario
         perfil, created = DatoPersonal.objects.get_or_create(user=self.user)
         self.assertTrue(DatoPersonal.objects.filter(user=self.user).exists())
 
-    # TEST 3: Campos Opcionales / Nulos (Coincide con ID 3 del Excel)
+    # TEST 3: Campos Opcionales / Nulos
     def test_campos_perfil_nulos(self):
         self.client.login(username='paciente_test', password='password123')
         perfil, created = DatoPersonal.objects.get_or_create(user=self.user)
@@ -36,11 +36,11 @@ class OdontologiaTests(TestCase):
         perfil.edad = None
         perfil.save()
         
-        # Verificamos que la base de datos acepta los valores nulos (lo que arreglamos en models.py)
+        # Verificamos que la base de datos acepta los valores nulos
         self.assertIsNone(perfil.nombre)
         self.assertIsNone(perfil.edad)
 
-    # TEST 4: Agendar Turno (Coincide con ID 4 del Excel)
+    # TEST 4: Agendar Turno
     def test_agendar_turno_agenda(self):
         # Verificamos que el modelo Agenda guarda correctamente la información
         cita = Agenda.objects.create(
@@ -49,7 +49,7 @@ class OdontologiaTests(TestCase):
         )
         self.assertTrue(Agenda.objects.filter(fecha="2025-05-20", horario="10:30").exists())
 
-    # TEST 5: Registro de Servicio (Coincide con ID 5 del Excel)
+    # TEST 5: Registro de Servicio
     def test_registro_nuevo_servicio(self):
         # Verificamos que el sistema puede dar de alta nuevos tratamientos o servicios
         servicio = Servicio.objects.create(
